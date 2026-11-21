@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff7e8" />
+    <meta name="description" content="HANZI ACADEMY — master the art of Chinese." />
+    <title>HANZI ACADEMY — 汉字学院</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="HANZI ACADEMY home">
+          <span class="brand-mark">汉</span>
+          <span>HANZI <span class="brand-dot">ACADEMY</span></span>
+        </a>
+
+        <div class="side-label">YOUR SPACE</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-view="overview"><span class="nav-icon">⌂</span> Overview</button>
+          <button class="nav-link" data-view="roadmap"><span class="nav-icon">▦</span> 100-level roadmap</button>
+          <button class="nav-link" data-view="practice"><span class="nav-icon">◉</span> Practice</button>
+          <button class="nav-link" data-view="tutor"><span class="nav-icon">✦</span> AI tutor</button>
+          <button class="nav-link" data-view="progress"><span class="nav-icon">↗</span> Progress & achievements</button>
+          <button class="nav-link" data-view="words"><span class="nav-icon">▤</span> Word library <span class="nav-count">36</span></button>
+          <button class="nav-link" data-view="saved"><span class="nav-icon">♡</span> Saved words</button>
+          <button class="nav-link" data-view="profile"><span class="nav-icon">⚙</span> Profile & settings</button>
+          <button class="nav-link" data-view="monetization"><span class="nav-icon">◆</span> Plans & subscriptions</button>
+        </nav>
+
+        <div class="side-label level-label">LEARNING LEVEL</div>
+        <nav class="level-nav" aria-label="Choose your learning level">
+          <button class="level-link selected" data-level="beginner"><span class="level-dot dot-beginner"></span> Beginner <span class="level-check">✓</span></button>
+          <button class="level-link" data-level="intermediate"><span class="level-dot dot-intermediate"></span> Intermediate</button>
+          <button class="level-link" data-level="expert"><span class="level-dot dot-expert"></span> Expert</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="streak-card">
+            <div class="streak-icon">✦</div>
+            <div><strong>4 day streak</strong><span>You're on a roll!</span></div>
+            <span class="streak-flame">🔥</span>
+          </div>
+          <div class="profile">
+            <div class="avatar">J</div>
+            <div class="profile-text"><strong>Jamie Parker</strong><span>Curious learner</span></div>
+            <button class="more-button" aria-label="More profile options">···</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="academy-brand">
+            <span class="academy-seal">汉</span>
+            <div><strong>HANZI ACADEMY</strong><span>汉字学院</span></div>
+          </div>
+          <div class="breadcrumb">My learning <span>/</span> <strong id="breadcrumb-current">Overview</strong></div>
+          <div class="topbar-actions">
+            <button class="icon-button theme-button" id="theme-button" aria-label="Switch to dark mode">◐</button>
+            <label class="search-box">
+              <span class="search-icon">⌕</span>
+              <input id="search-input" type="search" placeholder="Search words..." aria-label="Search Chinese words" />
+              <kbd>⌘ K</kbd>
+            </label>
+            <button class="icon-button notification-button" aria-label="Notifications">♧<i></i></button>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="welcome-row">
+            <div>
+              <p class="eyebrow" id="today-label">THURSDAY, NOVEMBER 20</p>
+              <h1>好久不见, Jamie <span class="wave">✦</span></h1>
+              <p class="welcome-copy">A little practice goes a long way. Ready for today's words?</p>
+            </div>
+            <button class="text-button" id="daily-plan-button">Your daily plan <span>↗</span></button>
+          </section>
+
+          <section class="hero-card">
+            <div class="hero-copy">
+              <div class="hero-tag"><span></span> YOUR LEARNING JOURNEY</div>
+              <h2>Every word brings<br />you a little closer.</h2>
+              <p>Build a stronger connection with Chinese, one meaningful word at a time.</p>
+              <button class="hero-button" id="continue-button">Continue learning <span>→</span></button>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="art-orbit orbit-one"></div>
+              <div class="art-orbit orbit-two"></div>
+              <div class="art-sun"></div>
+              <div class="art-character">学</div>
+              <div class="art-small-character">习</div>
+              <div class="art-leaf leaf-one"></div>
+              <div class="art-leaf leaf-two"></div>
+              <div class="art-stamp">慢慢来<br />比较快</div>
+            </div>
+            <div class="hero-progress">
+              <div class="progress-label"><span>WEEKLY PROGRESS</span><strong>3 of 5 days</strong></div>
+              <div class="progress-track"><span></span></div>
+              <div class="progress-days"><span class="complete">M</span><span class="complete">T</span><span class="complete">W</span><span class="today">T</span><span>F</span><span>S</span><span>S</span></div>
+            </div>
+          </section>
+
+          <section class="stats-row" aria-label="Your learning statistics">
+            <article class="stat-card">
+              <div class="stat-icon mint-icon">文</div>
+              <div><span class="stat-label">Words learned</span><strong id="words-learned">36 <small>/ 120</small></strong></div>
+              <span class="stat-trend">↗ 12%</span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon peach-icon">◷</div>
+              <div><span class="stat-label">Study time</span><strong>2.5 <small>hrs</small></strong></div>
+              <span class="stat-note">this week</span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon lilac-icon">✦</div>
+              <div><span class="stat-label">Current level</span><strong id="current-level-stat">01 <small>/ 100</small></strong></div>
+              <button class="mini-link" id="review-button">Review →</button>
+            </article>
+          </section>
+
+          <section class="section-block levels-section" id="levels-section">
+            <div class="section-heading">
+              <div><p class="eyebrow">100 LEVELS · ONE STEP AT A TIME</p><h2>Your learning roadmap</h2></div>
+              <button class="plain-link" id="all-levels-button">Explore roadmap <span>→</span></button>
+            </div>
+            <div class="level-cards">
+              <button class="learning-level-card beginner-card selected" data-level-card="beginner">
+                <span class="level-card-mark mark-green">初</span>
+                <span class="card-arrow">↗</span>
+                <span class="level-card-kicker">LEVELS 01–30</span>
+                <strong>Beginner</strong>
+                <span class="level-description">Pinyin, tones, greetings, everyday words and simple conversations.</span>
+                <span class="level-card-footer"><span>Foundations</span><span class="tiny-progress"><i style="width:0%"></i></span></span>
+              </button>
+              <button class="learning-level-card intermediate-card" data-level-card="intermediate">
+                <span class="level-card-mark mark-orange">进</span>
+                <span class="card-arrow">↗</span>
+                <span class="level-card-kicker">LEVELS 31–70</span>
+                <strong>Intermediate</strong>
+                <span class="level-description">Grammar, characters, travel, food and real-life conversations.</span>
+                <span class="level-card-footer"><span>Build fluency</span><span class="tiny-progress"><i style="width:0%"></i></span></span>
+              </button>
+              <button class="learning-level-card expert-card" data-level-card="expert">
+                <span class="level-card-mark mark-purple">博</span>
+                <span class="card-arrow">↗</span>
+                <span class="level-card-kicker">LEVELS 71–100</span>
+                <strong>Expert</strong>
+                <span class="level-description">Advanced Chinese for work, debates, idioms and native content.</span>
+                <span class="level-card-footer"><span>Mastery</span><span class="tiny-progress"><i style="width:0%"></i></span></span>
+              </button>
+            </div>
+            <div class="roadmap-panel" id="roadmap-panel">
+              <div class="roadmap-heading">
+                <div><strong>Level-by-level journey</strong><span>Pass each level check to unlock the next one.</span></div>
+                <button class="secondary-button" id="level-test-button">Take level <span id="test-level-label">01</span> check</button>
+              </div>
+              <div class="roadmap-groups" id="roadmap-groups" aria-label="100-level learning roadmap"></div>
+            </div>
+          </section>
+
+          <section class="section-block feature-section" id="features-section">
+            <div class="section-heading">
+              <div><p class="eyebrow">PRACTICE IN MORE WAYS</p><h2>Your learning toolkit</h2></div>
+            </div>
+            <div class="feature-grid">
+              <button class="feature-card" data-feature="speaking"><span class="feature-icon mint-icon">◖</span><strong>Speak Chinese</strong><span>Practice pronunciation and tones with your microphone.</span><b>Start speaking →</b></button>
+              <button class="feature-card" data-feature="writing"><span class="feature-icon peach-icon">✎</span><strong>Write characters</strong><span>Trace characters with your finger or mouse.</span><b>Open writing pad →</b></button>
+              <button class="feature-card" data-feature="games"><span class="feature-icon lilac-icon">◇</span><strong>Learning games</strong><span>Play a quick vocabulary and listening challenge.</span><b>Play a game →</b></button>
+              <button class="feature-card" data-feature="tutor"><span class="feature-icon mint-icon">✦</span><strong>AI Chinese tutor</strong><span>Ask questions and practice useful Chinese phrases.</span><b>Meet your tutor →</b></button>
+              <button class="feature-card" data-feature="situations"><span class="feature-icon peach-icon">◎</span><strong>Real-life situations</strong><span>Rehearse conversations for travel, food and work.</span><b>Choose a situation →</b></button>
+              <button class="feature-card" data-feature="translation"><span class="feature-icon lilac-icon">文</span><strong>Translation tool</strong><span>Look up common English and Chinese phrases.</span><b>Translate a phrase →</b></button>
+            </div>
+          </section>
+
+          <section class="section-block extra-section" id="extras-section">
+            <div class="section-heading">
+              <div><p class="eyebrow">A LITTLE CHINESE, EVERY DAY</p><h2>Daily discovery</h2></div>
+            </div>
+            <div class="discovery-grid">
+              <article class="discovery-card daily-word-card">
+                <div class="discovery-topline"><span>今日一词 · DAILY WORD</span><button class="plain-link" data-feature="daily-word">Hear it ↗</button></div>
+                <strong class="discovery-hanzi">坚持</strong><span class="discovery-pinyin">jiān chí · to keep going</span>
+                <p>坚持练习，你会进步。<br /><span>Keep practicing and you will improve.</span></p>
+              </article>
+              <article class="discovery-card">
+                <div class="discovery-topline"><span>WORD OF THE WEEK</span><span class="discovery-badge">WEEK 01</span></div>
+                <strong>热闹</strong><span class="discovery-pinyin">rè nao · lively, bustling</span>
+                <p>Use it to describe a busy market, festival or lively street.</p>
+              </article>
+              <article class="discovery-card culture-card">
+                <div class="discovery-topline"><span>CHINESE CULTURE</span><span>文化</span></div>
+                <strong>Tea, shared slowly</strong>
+                <p>Offering tea is a thoughtful way to welcome guests. Try saying 请喝茶 (qǐng hē chá).</p>
+              </article>
+            </div>
+            <div class="extra-actions">
+              <button class="secondary-button" data-feature="offline">↓ Download lessons</button>
+              <button class="secondary-button" data-feature="reminders">◷ Daily reminders</button>
+              <button class="secondary-button" data-feature="leaderboard">♧ Leaderboard</button>
+              <button class="secondary-button" data-feature="hsk">HSK preparation</button>
+              <button class="secondary-button" data-feature="certificate">My certificates</button>
+            </div>
+          </section>
+
+          <section class="section-block study-section" id="study-section">
+            <div class="section-heading">
+              <div><p class="eyebrow">A GOOD PLACE TO START</p><h2 id="word-list-title">Beginner words <span class="word-total">12 words</span></h2></div>
+              <button class="plain-link" id="browse-words-button">Browse word library <span>→</span></button>
+            </div>
+            <div class="study-grid">
+              <div class="word-list-panel">
+                <div class="word-list-head"><span>WORD</span><span>MEANING</span><span></span></div>
+                <div id="word-list" class="word-list"></div>
+                <div id="empty-state" class="empty-state" hidden>No words found. Try another search.</div>
+                <button class="load-more-button" id="show-more-button">Explore all words <span>→</span></button>
+              </div>
+              <aside class="practice-card" id="practice-card">
+                <div class="practice-topline"><span class="practice-pill">QUICK PRACTICE</span><span id="practice-step">01 / 05</span></div>
+                <p class="practice-instruction">What does this word mean?</p>
+                <button class="flashcard" id="flashcard" aria-label="Reveal word meaning">
+                  <span class="flashcard-hint" id="flashcard-hint">TAP TO REVEAL</span>
+                  <span class="flashcard-character" id="flashcard-character">你好</span>
+                  <span class="flashcard-pinyin" id="flashcard-pinyin">nǐ hǎo</span>
+                  <span class="flashcard-meaning" id="flashcard-meaning" hidden>Hello</span>
+                </button>
+                <div class="practice-actions">
+                  <button class="sound-button" id="sound-button"><span>◖</span> Listen</button>
+                  <button class="next-word-button" id="next-word-button">Next word <span>→</span></button>
+                </div>
+                <div class="practice-progress"><span id="practice-progress-fill"></span></div>
+              </aside>
+            </div>
+          </section>
+
+          <section class="section-block progress-section" id="progress-achievements">
+            <div class="section-heading">
+              <div><p class="eyebrow">YOUR LEARNING JOURNEY</p><h2>Progress & achievements</h2></div>
+              <button class="plain-link" id="share-progress-button">Share progress <span>↗</span></button>
+            </div>
+            <div class="progress-dashboard">
+              <article class="progress-summary">
+                <div><span>Overall progress</span><strong>36 <small>of 100 levels</small></strong></div>
+                <div class="progress-ring" aria-label="36 percent complete"><span>36%</span></div>
+              </article>
+              <article class="achievement-card">
+                <span class="achievement-icon">🔥</span>
+                <div><strong>4-day streak</strong><span>Keep practicing to reach 7 days</span></div>
+              </article>
+              <article class="achievement-card">
+                <span class="achievement-icon achievement-gold">文</span>
+                <div><strong>Word Explorer</strong><span>Learned 36 new words</span></div>
+              </article>
+              <article class="achievement-card locked-achievement">
+                <span class="achievement-icon">🔒</span>
+                <div><strong>HSK Trailblazer</strong><span>Complete an HSK practice course</span></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="section-block profile-section" id="profile-settings">
+            <div class="section-heading">
+              <div><p class="eyebrow">YOUR ACCOUNT</p><h2>Profile & settings</h2></div>
+            </div>
+            <div class="profile-settings-grid">
+              <article class="profile-summary-card">
+                <div class="profile-avatar-large">J</div>
+                <div><strong>Jamie Parker</strong><span>Curious learner · Beginner</span></div>
+                <button class="secondary-button" id="edit-profile-button">Edit profile</button>
+              </article>
+              <article class="settings-card">
+                <div class="setting-row"><div><strong>Daily reminders</strong><span>Practice at 7:00 PM</span></div><label class="toggle"><input id="reminder-toggle" type="checkbox" checked /><span></span></label></div>
+                <div class="setting-row"><div><strong>Sound effects</strong><span>Play tones and feedback sounds</span></div><label class="toggle"><input id="sound-toggle" type="checkbox" checked /><span></span></label></div>
+                <button class="settings-save" id="save-settings-button">Save settings <span>→</span></button>
+              </article>
+            </div>
+          </section>
+
+          <section class="section-block monetization-section" id="monetization">
+            <div class="section-heading">
+              <div><p class="eyebrow">LEARN YOUR WAY</p><h2>Plans for every goal</h2></div>
+            </div>
+            <div class="pricing-grid">
+              <article class="plan-card">
+                <div class="plan-topline"><span>FREE</span></div>
+                <strong class="plan-price">$0 <small>/ forever</small></strong>
+                <p>Build a strong foundation at your own pace.</p>
+                <ul>
+                  <li>Basic lessons</li>
+                  <li>Daily vocabulary</li>
+                  <li>Core learning roadmap</li>
+                </ul>
+                <button class="plan-button" data-plan="Free">Current plan</button>
+              </article>
+              <article class="plan-card premium-card">
+                <div class="plan-topline"><span>PREMIUM</span><b>Most popular</b></div>
+                <strong class="plan-price">$8 <small>/ month</small></strong>
+                <p>Unlock every practice tool and learn without limits.</p>
+                <ul>
+                  <li>Unlimited lessons</li>
+                  <li>AI Chinese tutor</li>
+                  <li>Advanced speaking practice</li>
+                </ul>
+                <button class="plan-button premium-button" data-plan="Premium monthly">Choose monthly</button>
+              </article>
+              <article class="plan-card">
+                <div class="plan-topline"><span>HSK & ADVANCED</span></div>
+                <strong class="plan-price">Courses <small>/ one-time</small></strong>
+                <p>Prepare for exams and earn a mark of mastery.</p>
+                <ul>
+                  <li>Paid HSK preparation courses</li>
+                  <li>Special certificates</li>
+                  <li>Advanced courses</li>
+                </ul>
+                <button class="plan-button" data-plan="HSK course">Explore courses</button>
+              </article>
+            </div>
+          </section>
+
+          <footer class="page-footer"><span>Keep showing up. 继续加油!</span><span>Made for curious minds <b>♥</b></span></footer>
+        </div>
+      </main>
+    </div>
+    <dialog class="feature-dialog" id="feature-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-header"><div><p class="eyebrow">YOUR CHINESE PRACTICE</p><h2 id="dialog-title">Practice</h2></div><button class="dialog-close" id="dialog-close" aria-label="Close dialog">×</button></div>
+      <div class="dialog-body" id="dialog-body"></div>
+    </dialog>
+    <nav class="bottom-nav" aria-label="Mobile navigation">
+      <button class="bottom-nav-link active" data-mobile-view="overview"><span>⌂</span>Home</button>
+      <button class="bottom-nav-link" data-mobile-view="roadmap"><span>学</span>Learn</button>
+      <button class="bottom-nav-link" data-mobile-view="tutor"><span>◉</span>Speak</button>
+      <button class="bottom-nav-link" data-mobile-view="practice"><span>◇</span>Games</button>
+      <button class="bottom-nav-link" data-mobile-view="profile"><span>♙</span>Profile</button>
+    </nav>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
